@@ -39,14 +39,11 @@
 }
 
 #todo-list li {
-  list-style: none;
-}
-
-#todo-list li {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   align-items: center;
   padding: 0 12px;
+  list-style: none;
 }
 
 #todo-list ul li i {

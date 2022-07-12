@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 1. Go to terminal and ```cd``` into the directory of your preference.
 2.  Run ```git clone git@github.com:alphayowakarindi/to-do-list.git``` to clone the app.
 3. ```npm install``` to install the dependencies for testing linters errors
-4. Run ```npm start```
+4. Run ```npm start``` and the app will utomatically open in your default browser.
 
 
 ### Run tests

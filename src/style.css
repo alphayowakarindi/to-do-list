@@ -5,9 +5,10 @@
 }
 
 #todo-list {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   border: 1px solid rgba(128, 128, 128, 0.3);
+  margin-top: 100px;
 }
 
 #todo-list .title {
@@ -48,7 +49,6 @@
   padding: 0 12px;
 }
 
-
 #todo-list ul li i {
   margin-left: 97%;
 }
@@ -56,15 +56,15 @@
 hr {
   border: none;
   height: 1px;
-  background-color:  rgba(128, 128, 128, 0.3);
+  background-color: rgba(128, 128, 128, 0.3);
 }
 
-hr:last-child{
+hr:last-child {
   background-color: transparent;
 }
 
 #todo-list .clear-btn {
   text-align: center;
   padding: 10px 0;
-  background-color:  rgba(128, 128, 128, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
 }

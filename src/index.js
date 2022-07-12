@@ -2,7 +2,7 @@ import _ from "lodash";
 import "./style.css";
 
 // Selectors
-const todoListUl = document.querySelector('.todo-list')
+const todoListUl = document.querySelector(".todo-list");
 
 const todoTasks = [
   {
@@ -21,3 +21,13 @@ const todoTasks = [
     completed: true,
   },
 ];
+
+todoTasks.forEach((todoTask) => {
+  todoListUl.innerHTML += `
+   <li>
+       <input type="checkbox">
+       <span>${todoTask.description}</span>
+       <i class="fa-solid fa-ellipsis-vertical"></i>
+  </li>                  
+  `;
+});

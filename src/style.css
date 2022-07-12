@@ -62,3 +62,9 @@ hr {
 hr:last-child{
   background-color: transparent;
 }
+
+#todo-list .clear-btn {
+  text-align: center;
+  padding: 10px 0;
+  background-color:  rgba(128, 128, 128, 0.2);
+}

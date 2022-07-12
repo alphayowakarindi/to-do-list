@@ -15,7 +15,7 @@ const todoTasks = [
     completed: true,
   },
   {
-    index: 1,
+    index: 2,
     description: 'fix car',
     completed: true,
   },

@@ -1,6 +1,9 @@
 import _ from "lodash";
 import "./style.css";
 
+// Selectors
+const todoListUl = document.querySelector('.todo-list')
+
 const todoTasks = [
   {
     index: 0,

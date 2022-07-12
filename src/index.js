@@ -28,6 +28,7 @@ todoTasks.forEach((todoTask) => {
        <input type="checkbox">
        <span>${todoTask.description}</span>
        <i class="fa-solid fa-ellipsis-vertical"></i>
-  </li>                  
+  </li>    
+  <hr>              
   `;
 });

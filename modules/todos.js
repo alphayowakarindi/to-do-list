@@ -5,7 +5,7 @@ const addTaskForm = document.querySelector("#add-task-form");
 export const todoTasks = [];
 
 // Classes
-class Task {
+export class Task {
   constructor(description) {
     this.index = Store.getTasksList().length;
     this.completed = false;
@@ -13,7 +13,7 @@ class Task {
   }
 }
 
-class Store {
+export class Store {
   static getTasksList() {
     const todoTasks = JSON.parse(localStorage.getItem("todoTasks")) || [];
     return todoTasks;
@@ -26,7 +26,7 @@ class Store {
   }
 }
 
-class UI {
+export class UI {
   static displayTasksToUI() {
     const todoTasks = Store.getTasksList();
 

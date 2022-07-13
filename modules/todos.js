@@ -26,6 +26,10 @@ class Store {
   }
 }
 
+class UI {
+
+}
+
 // Event listners
 addTaskForm.addEventListener("submit", (e) => {
   e.preventDefault();

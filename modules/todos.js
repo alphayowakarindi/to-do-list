@@ -29,17 +29,21 @@ class Store {
 class UI {
   static displayTasksToUI() {
     const todoTasks = Store.getTasksList();
-    const todoListUl = document.querySelector(".todo-list");
 
     todoTasks.forEach((todoTask) => {
-      todoListUl.innerHTML += `
-                <li>
-                    <input type="checkbox">
-                    <span>${todoTask.description}</span>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </li>    
-                <hr>`;
+      UI.addTaskToList(todoTask)
     });
+  }
+
+  static addTaskToList(task){
+    const todoListUl = document.querySelector(".todo-list");
+    todoListUl.innerHTML += `
+              <li>
+                  <input type="checkbox">
+                  <span>${task.description}</span>
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+              </li>    
+              <hr>`;
   }
 }
 
@@ -51,5 +55,6 @@ addTaskForm.addEventListener("submit", (e) => {
   const task = new Task(description);
   Store.addTask(task);
   document.querySelector("#description").value = "";
+  UI.addTaskToList(task)
 });
 document.addEventListener("DOMContentLoaded", UI.displayTasksToUI);

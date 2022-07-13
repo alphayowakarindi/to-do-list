@@ -5,7 +5,7 @@ const addTaskForm = document.querySelector('#add-task-form');
 export const todoTasks = [];
 
 // Classes
-class Book {
+class Task {
   constructor(description) {
     this.index = todoTasks.length;
     this.completed = false;

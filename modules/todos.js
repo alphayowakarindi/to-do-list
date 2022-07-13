@@ -36,7 +36,7 @@ export class UI {
     todoListUl.innerHTML += `
               <li>
                   <input type="checkbox">
-                  <input  autofocus  value="${task.description}" type="text" id="input-with-task"/>
+                  <input  disabled value="${task.description}" type="text" id="input-with-task"/>
                   <i class="fa-solid fa-ellipsis-vertical edit-task"></i>
                   <i class="fa-solid fa-trash-can"></i>
               </li>    

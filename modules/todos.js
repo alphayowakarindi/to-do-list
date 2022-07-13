@@ -16,7 +16,7 @@ class Task {
 class Store {
   static getTasksList() {
     const todoTasks = JSON.parse(localStorage.getItem("todoTasks")) || [];
-    return
+    return todoTasks;
   }
 
   static addTask(task) {

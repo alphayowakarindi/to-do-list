@@ -21,9 +21,15 @@ export class Store {
     localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
   }
 
-  static remove(objIndex){
+  static remove(objIndex) {
     const todoTasks = JSON.parse(localStorage.getItem("todoTasks"));
-    const filtereTododTasks = todoTasks.filter(todoTask => todoTask.index !== objIndex)
+    const filtereTododTasks = todoTasks.filter(
+      (todoTask) => todoTask.index !== objIndex
+    );
+    // Update indexes of the todo tasks objects
+    filtereTododTasks.forEach(
+      (filtereTododTask, index) => (filtereTododTask.index = index)
+    );
     localStorage.setItem("todoTasks", JSON.stringify(filtereTododTasks));
   }
 }
@@ -33,11 +39,11 @@ export class UI {
     const todoTasks = Store.getTasksList();
 
     todoTasks.forEach((todoTask) => {
-      UI.addTaskToList(todoTask)
+      UI.addTaskToList(todoTask);
     });
   }
 
-  static addTaskToList(task){
+  static addTaskToList(task) {
     const todoListUl = document.querySelector(".todo-list");
     todoListUl.innerHTML += `
               <li>

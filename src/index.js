@@ -35,8 +35,10 @@ todoListUl.addEventListener("click", (e) => {
   }
 
   if (element.classList.contains("fa-trash-can")) {
-    const objIndex = Number(element.dataset.index)
+    const objIndex = Number(element.dataset.index);
+    // Remove from local storage
+    Store.remove(objIndex);
     // Remove from dom
-    element.parentElement.remove()
+    element.parentElement.remove();
   }
 });

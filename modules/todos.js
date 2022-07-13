@@ -20,6 +20,12 @@ export class Store {
     todoTasks.push(task);
     localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
   }
+
+  static remove(objIndex){
+    const todoTasks = JSON.parse(localStorage.getItem("todoTasks"));
+    const filtereTododTasks = todoTasks.filter(todoTask => todoTask.index !== objIndex)
+    localStorage.setItem("todoTasks", JSON.stringify(filtereTododTasks));
+  }
 }
 
 export class UI {

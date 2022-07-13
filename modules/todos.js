@@ -27,7 +27,20 @@ class Store {
 }
 
 class UI {
+  static displayTasksToUI() {
+    const todoTasks = Store.getTasksList();
+    const todoListUl = document.querySelector(".todo-list");
 
+    todoTasks.forEach((todoTask) => {
+      todoListUl.innerHTML += `
+                <li>
+                    <input type="checkbox">
+                    <span>${todoTask.description}</span>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </li>    
+                <hr>`;
+    });
+  }
 }
 
 // Event listners
@@ -37,5 +50,6 @@ addTaskForm.addEventListener("submit", (e) => {
   if (!description) return;
   const task = new Task(description);
   Store.addTask(task);
-  document.querySelector("#description").value = ''
+  document.querySelector("#description").value = "";
 });
+document.addEventListener("DOMContentLoaded", UI.displayTasksToUI);

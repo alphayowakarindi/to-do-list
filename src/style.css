@@ -65,3 +65,9 @@ hr:last-child {
   padding: 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
 }
+
+.fa-trash-can {
+  display:none; 
+  position:relative; 
+  right:12px;
+}

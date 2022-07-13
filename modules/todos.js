@@ -37,7 +37,8 @@ export class UI {
               <li>
                   <input type="checkbox">
                   <span>${task.description}</span>
-                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                  <i class="fa-solid fa-ellipsis-vertical edit-task"></i>
+                  <i class="fa-solid fa-trash-can"></i>
               </li>    
               <hr>`;
   }

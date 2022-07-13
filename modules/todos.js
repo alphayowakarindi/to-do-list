@@ -7,7 +7,7 @@ export const todoTasks = [];
 // Classes
 class Task {
   constructor(description) {
-    this.index = todoTasks.length;
+    this.index = Store.getTasksList().length;
     this.completed = false;
     this.description = description;
   }

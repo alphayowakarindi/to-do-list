@@ -33,4 +33,8 @@ todoListUl.addEventListener("click", (e) => {
     element.style.display = "none";
     element.nextElementSibling.style.display = "inline-block";
   }
+
+  if (element.classList.contains("fa-trash-can")) {
+    const objIndex = Number(element.dataset.index)
+  }
 });

@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 // Selectors
-const addTaskForm = document.querySelector('#add-task-form');
+const addTaskForm = document.querySelector("#add-task-form");
 
 export const todoTasks = [];
 
@@ -14,17 +14,22 @@ class Task {
 }
 
 class Store {
+  static getTasksList() {
+    const todoTasks = JSON.parse(localStorage.getItem("todoTasks")) || [];
+    return
+  }
+
   static addTask(task) {
-    const todoTasks = JSON.parse(localStorage.getItem('todoTasks')) || [];
+    this.getTasksList();
     todoTasks.push(task);
-    localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
+    localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
   }
 }
 
 // Event listners
-addTaskForm.addEventListener('submit', (e) => {
+addTaskForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const description = document.querySelector('#description').value;
+  const description = document.querySelector("#description").value;
   if (!description) return;
   const task = new Task(description);
   Store.addTask(task);

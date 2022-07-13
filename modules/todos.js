@@ -18,4 +18,5 @@ addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const description = document.querySelector('#description').value;
   if (!description) return;
+  const task = new Task(description)
 });

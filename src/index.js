@@ -1,16 +1,22 @@
 import './style.css';
-import { todoTasks } from '../modules/todos.js';
+import { Task } from '../modules/todos.js';
+import { Store } from '../modules/todos.js';
+import { UI } from '../modules/todos.js';
 
-// Selectors
-const todoListUl = document.querySelector('.todo-list');
+//Selectors
+const addTaskForm = document.querySelector("#add-task-form");
 
-todoTasks.forEach((todoTask) => {
-  todoListUl.innerHTML += `
-   <li>
-       <input type="checkbox">
-       <span>${todoTask.description}</span>
-       <i class="fa-solid fa-ellipsis-vertical"></i>
-  </li>    
-  <hr>              
-  `;
+// Event listners
+addTaskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const description = document.querySelector("#description").value;
+  if (!description) return;
+  const task = new Task(description);
+  Store.addTask(task);
+  document.querySelector("#description").value = "";
+  UI.addTaskToList(task)
 });
+
+// Event listners
+document.addEventListener("DOMContentLoaded", UI.displayTasksToUI);
+

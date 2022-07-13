@@ -1,8 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-// Selectors
-const addTaskForm = document.querySelector("#add-task-form");
-
-export const todoTasks = [];
 
 // Classes
 export class Task {
@@ -46,15 +42,3 @@ export class UI {
               <hr>`;
   }
 }
-
-// Event listners
-addTaskForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const description = document.querySelector("#description").value;
-  if (!description) return;
-  const task = new Task(description);
-  Store.addTask(task);
-  document.querySelector("#description").value = "";
-  UI.addTaskToList(task)
-});
-document.addEventListener("DOMContentLoaded", UI.displayTasksToUI);

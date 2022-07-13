@@ -7,6 +7,7 @@ import { UI } from '../modules/todos.js';
 const addTaskForm = document.querySelector("#add-task-form");
 const addedTask = document.querySelector("#input-with-task");
 const editTask = document.querySelector(".edit-task");
+const todoListUl = document.querySelector('.todo-list')
 
 // Event listners
 addTaskForm.addEventListener("submit", (e) => {

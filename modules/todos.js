@@ -20,7 +20,7 @@ class Store {
   }
 
   static addTask(task) {
-    this.getTasksList();
+    const todoTasks = Store.getTasksList();
     todoTasks.push(task);
     localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
   }

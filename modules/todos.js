@@ -13,10 +13,19 @@ class Task {
   }
 }
 
+class Store {
+  static addTask(task) {
+    const todoTasks = JSON.parse(localStorage.getItem('todoTasks')) || [];
+    todoTasks.push(task);
+    localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
+  }
+}
+
 // Event listners
 addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const description = document.querySelector('#description').value;
   if (!description) return;
-  const task = new Task(description)
+  const task = new Task(description);
+  Store.addTask(task);
 });

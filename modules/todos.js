@@ -33,4 +33,5 @@ addTaskForm.addEventListener("submit", (e) => {
   if (!description) return;
   const task = new Task(description);
   Store.addTask(task);
+  document.querySelector("#description").value = ''
 });

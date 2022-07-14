@@ -7,7 +7,7 @@ import { CompletedStatus } from "../modules/completedStatus.js";
 // Selectors
 const addTaskForm = document.querySelector("#add-task-form");
 const todoListUl = document.querySelector(".todo-list");
-const clearBtn = document.querySelector('.clear-btn');
+const clearBtn = document.querySelector(".clear-btn");
 
 // Event listners
 addTaskForm.addEventListener("submit", (e) => {
@@ -67,4 +67,27 @@ todoListUl.addEventListener("click", (e) => {
     const objIndex = Number(element.dataset.index);
     CompletedStatus.updateCompletedStatus(objIndex, element);
   }
+});
+
+clearBtn.addEventListener("click", () => {
+  const todoTasks = Store.getTasksList();
+
+  const inCompletedTodoTasks = todoTasks.filter(
+    (todoTask) => !todoTask.completed
+  );
+
+  // update indexes of the incompleted todos
+  inCompletedTodoTasks.forEach(
+    (inCompletedTodoTask, index) => (inCompletedTodoTask.index = index + 1)
+  );
+
+  // save incompleted todos
+  localStorage.setItem("todoTasks", JSON.stringify(inCompletedTodoTasks));
+
+  // remove completed todos from the dom
+  const completedElements = document.querySelectorAll(".line-through");
+  completedElements.forEach((completedElement) => {
+    // remove the li element
+    completedElement.parentElement.remove();
+  });
 });

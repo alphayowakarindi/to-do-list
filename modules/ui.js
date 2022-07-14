@@ -1,4 +1,5 @@
-import { Store } from "../modules/store.js";
+/* eslint-disable import/prefer-default-export */
+import { Store } from './store.js';
 
 export class UI {
   static displayTasksToUI() {
@@ -10,7 +11,7 @@ export class UI {
   }
 
   static addTaskToList(task) {
-    const todoListUl = document.querySelector(".todo-list");
+    const todoListUl = document.querySelector('.todo-list');
     todoListUl.innerHTML += `
       <form id="update-form">
                 <li>

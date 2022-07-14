@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Store } from "../modules/store.js";
+import { Store } from './store.js';
 
 // Classes
 export class Task {

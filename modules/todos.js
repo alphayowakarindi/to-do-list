@@ -28,7 +28,7 @@ export class Store {
     );
     // Update indexes of the todo tasks objects
     filtereTododTasks.forEach(
-      (filtereTododTask, index) => (filtereTododTask.index = index)
+      (filtereTododTask, index) => (filtereTododTask.index = index +1)
     );
     localStorage.setItem("todoTasks", JSON.stringify(filtereTododTasks));
   }

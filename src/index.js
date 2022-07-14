@@ -1,40 +1,40 @@
-import "./style.css";
-import { Task } from "../modules/todos.js";
-import { Store } from "../modules/store.js";
-import { UI } from "../modules/ui.js";
-import { CompletedStatus } from "../modules/completedStatus.js";
+import './style.css';
+import { Task } from '../modules/todos.js';
+import { Store } from '../modules/store.js';
+import { UI } from '../modules/ui.js';
+import { CompletedStatus } from '../modules/completedStatus.js';
 
 // Selectors
-const addTaskForm = document.querySelector("#add-task-form");
-const todoListUl = document.querySelector(".todo-list");
-const clearBtn = document.querySelector(".clear-btn");
+const addTaskForm = document.querySelector('#add-task-form');
+const todoListUl = document.querySelector('.todo-list');
+const clearBtn = document.querySelector('.clear-btn');
 
 // Event listners
-addTaskForm.addEventListener("submit", (e) => {
+addTaskForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const description = document.querySelector("#description").value;
+  const description = document.querySelector('#description').value;
   if (!description) return;
   const task = new Task(description);
   Store.addTask(task);
-  document.querySelector("#description").value = "";
+  document.querySelector('#description').value = '';
   UI.addTaskToList(task);
 });
 
 // Event listners
-document.addEventListener("DOMContentLoaded", UI.displayTasksToUI);
+document.addEventListener('DOMContentLoaded', UI.displayTasksToUI);
 
-todoListUl.addEventListener("click", (e) => {
+todoListUl.addEventListener('click', (e) => {
   const element = e.target;
 
-  if (element.classList.contains("edit-task")) {
+  if (element.classList.contains('edit-task')) {
     element.previousElementSibling.disabled = false;
-    element.previousElementSibling.style.backgroundColor = "#ffffb3";
-    element.parentElement.style.backgroundColor = "#ffffb3";
-    element.style.display = "none";
-    element.nextElementSibling.style.display = "inline-block";
+    element.previousElementSibling.style.backgroundColor = '#ffffb3';
+    element.parentElement.style.backgroundColor = '#ffffb3';
+    element.style.display = 'none';
+    element.nextElementSibling.style.display = 'inline-block';
   }
 
-  if (element.classList.contains("fa-trash-can")) {
+  if (element.classList.contains('fa-trash-can')) {
     const objIndex = Number(element.dataset.index);
     // Remove from local storage
     Store.remove(objIndex);
@@ -42,20 +42,20 @@ todoListUl.addEventListener("click", (e) => {
     element.parentElement.remove();
   }
 
-  if (element.classList.contains("input-with-task")) {
+  if (element.classList.contains('input-with-task')) {
     const objIndex = Number(element.dataset.index);
     const updateForm = element.parentElement.parentElement;
-    updateForm.addEventListener("submit", (e) => {
+    updateForm.addEventListener('submit', (e) => {
       e.preventDefault();
       // update input in the dom
       const updatedValue = element.value;
       element.disabled = true;
-      element.parentElement.style.backgroundColor = "";
-      element.style.backgroundColor = "";
+      element.parentElement.style.backgroundColor = '';
+      element.style.backgroundColor = '';
       // hide delete icon
-      element.nextElementSibling.nextElementSibling.style.display = "none";
+      element.nextElementSibling.nextElementSibling.style.display = 'none';
       // show edit icon
-      element.nextElementSibling.style.display = "inline-block";
+      element.nextElementSibling.style.display = 'inline-block';
 
       // update in the local storage as well
       Store.update(objIndex, updatedValue);
@@ -63,29 +63,29 @@ todoListUl.addEventListener("click", (e) => {
   }
 
   // Updating completed status
-  if (element.classList.contains("completed-status-checkbox")) {
+  if (element.classList.contains('completed-status-checkbox')) {
     const objIndex = Number(element.dataset.index);
     CompletedStatus.updateCompletedStatus(objIndex, element);
   }
 });
 
-clearBtn.addEventListener("click", () => {
+clearBtn.addEventListener('click', () => {
   const todoTasks = Store.getTasksList();
 
   const inCompletedTodoTasks = todoTasks.filter(
-    (todoTask) => !todoTask.completed
+    (todoTask) => !todoTask.completed,
   );
 
   // update indexes of the incompleted todos
-  inCompletedTodoTasks.forEach(
-    (inCompletedTodoTask, index) => (inCompletedTodoTask.index = index + 1)
-  );
+  inCompletedTodoTasks.forEach((inCompletedTodoTask, index) => {
+    inCompletedTodoTask.index = index + 1;
+  });
 
   // save incompleted todos
-  localStorage.setItem("todoTasks", JSON.stringify(inCompletedTodoTasks));
+  localStorage.setItem('todoTasks', JSON.stringify(inCompletedTodoTasks));
 
   // remove completed todos from the dom
-  const completedElements = document.querySelectorAll(".line-through");
+  const completedElements = document.querySelectorAll('.line-through');
   completedElements.forEach((completedElement) => {
     // remove the li element
     completedElement.parentElement.remove();

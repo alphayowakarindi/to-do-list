@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Store } from "./store.js";
+import { Store } from './store.js';
 
 export class UI {
   static displayTasksToUI() {
@@ -11,7 +11,7 @@ export class UI {
   }
 
   static addTaskToList(task) {
-    const todoListUl = document.querySelector(".todo-list");
+    const todoListUl = document.querySelector('.todo-list');
     todoListUl.innerHTML += `
       <form id="update-form">
                 <li>
@@ -19,20 +19,20 @@ export class UI {
                      type="checkbox" 
                      class="completed-status-checkbox" 
                      data-index="${task.index}"
-                     ${task.completed ? "checked" : ""}>
+                     ${task.completed ? 'checked' : ''}>
                     <input 
                     class="input-with-task 
-                    ${task.completed ? "line-through" : ""}"  
+                    ${task.completed ? 'line-through' : ''}"  
                     disabled 
                     value="${task.description}" 
                     type="text" id="input-with-task" 
                     data-index="${task.index}"/>
                     <i class="fa-solid fa-ellipsis-vertical edit-task" data-index="${
-                      task.index
-                    }"></i>
+  task.index
+}"></i>
                     <i class="fa-solid fa-trash-can" data-index="${
-                      task.index
-                    }"></i>
+  task.index
+}"></i>
                 </li>  
                 <button id="submit" type="submit" hidden></button> 
       </form>            

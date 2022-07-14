@@ -63,6 +63,7 @@ todoListUl.addEventListener('click', (e) => {
   
   // Updating completed status
   if(element.classList.contains('completed-status-checkbox')){
+    const objIndex = Number(element.dataset.index);
     element.addEventListener('change', ()=> alert('changed'))
   }
 });

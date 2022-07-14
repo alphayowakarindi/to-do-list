@@ -70,6 +70,7 @@ hr:last-child {
   display:none; 
   position:relative; 
   right:12px;
+  cursor: pointer;
 }
 
 .edit-task {

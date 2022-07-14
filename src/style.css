@@ -71,3 +71,8 @@ hr:last-child {
   position:relative; 
   right:12px;
 }
+
+.edit-task {
+  cursor: pointer;
+  padding: 5px;
+}

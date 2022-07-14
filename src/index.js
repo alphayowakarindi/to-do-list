@@ -41,4 +41,24 @@ todoListUl.addEventListener("click", (e) => {
     // Remove from dom
     element.parentElement.remove();
   }
+
+  if (element.classList.contains("input-with-task")) {
+    const objIndex = Number(element.dataset.index);
+    const updateForm = element.parentElement.parentElement;
+    updateForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // update input in the dom
+      element.value = element.value;
+      element.disabled = true;
+      element.parentElement.style.backgroundColor = ''
+      element.style.backgroundColor = ''
+      // hide delete icon
+      element.nextElementSibling.nextElementSibling.style.display = 'none'
+      // show edit icon
+      element.nextElementSibling.style.display = 'inline-block'
+
+       // update in the local storage as well
+       Store.update(objIndex, element.value)
+    });
+  }
 });

@@ -28,9 +28,20 @@ export class Store {
     );
     // Update indexes of the todo tasks objects
     filtereTododTasks.forEach(
-      (filtereTododTask, index) => (filtereTododTask.index = index +1)
+      (filtereTododTask, index) => (filtereTododTask.index = index + 1)
     );
     localStorage.setItem("todoTasks", JSON.stringify(filtereTododTasks));
+  }
+
+  static update(objIndex, value) {
+    const todoTasks = JSON.parse(localStorage.getItem("todoTasks"));
+    const todoToUpdate = todoTasks[objIndex - 1];
+
+    // update description
+    todoToUpdate.description = value;
+
+    // Save update array
+    localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
   }
 }
 

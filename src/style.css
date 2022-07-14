@@ -67,9 +67,9 @@ hr:last-child {
 }
 
 .fa-trash-can {
-  display:none; 
-  position:relative; 
-  right:12px;
+  display: none;
+  position: relative;
+  right: 12px;
   cursor: pointer;
 }
 

@@ -2,6 +2,7 @@ import './style.css';
 import { Task } from '../modules/todos.js';
 import { Store } from '../modules/store.js';
 import { UI } from '../modules/ui.js';
+import { CompletedStatus } from '../modules/completedStatus';
 
 // Selectors
 const addTaskForm = document.querySelector('#add-task-form');

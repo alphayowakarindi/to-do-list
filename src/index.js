@@ -1,7 +1,7 @@
 import "./style.css";
 import { Task } from "../modules/todos.js";
-import { Store } from "../modules/todos.js";
-import { UI } from "../modules/todos.js";
+import { Store } from "../modules/store.js";
+import { UI } from "../modules/ui.js";
 
 //Selectors
 const addTaskForm = document.querySelector("#add-task-form");

@@ -46,12 +46,15 @@ export class UI {
   static addTaskToList(task) {
     const todoListUl = document.querySelector(".todo-list");
     todoListUl.innerHTML += `
+    <form id="update-form">
               <li>
                   <input type="checkbox">
-                  <input  disabled value="${task.description}" type="text" id="input-with-task"/>
+                  <input class="input-with-task"  disabled value="${task.description}" type="text" id="input-with-task"/>
                   <i class="fa-solid fa-ellipsis-vertical edit-task" data-index="${task.index}"></i>
                   <i class="fa-solid fa-trash-can" data-index="${task.index}"></i>
-              </li>    
-              <hr>`;
+              </li>  
+              <button id="submit" type="submit" hidden></button> 
+    </form>            
+    <hr>`;
   }
 }

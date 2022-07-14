@@ -7,6 +7,7 @@ import { CompletedStatus } from "../modules/completedStatus.js";
 // Selectors
 const addTaskForm = document.querySelector("#add-task-form");
 const todoListUl = document.querySelector(".todo-list");
+const clearBtn = document.querySelector('.clear-btn');
 
 // Event listners
 addTaskForm.addEventListener("submit", (e) => {

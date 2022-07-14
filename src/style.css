@@ -77,3 +77,7 @@ hr:last-child {
   cursor: pointer;
   padding: 5px;
 }
+
+.line-through {
+  text-decoration: line-through;
+}

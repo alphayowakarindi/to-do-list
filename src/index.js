@@ -60,4 +60,9 @@ todoListUl.addEventListener('click', (e) => {
       Store.update(objIndex, updatedValue);
     });
   }
+  
+  // Updating completed status
+  if(element.classList.contains('completed-status-checkbox')){
+    element.addEventListener('change', ()=> alert('changed'))
+  }
 });

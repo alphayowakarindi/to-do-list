@@ -16,7 +16,7 @@ export class UI {
       <form id="update-form">
                 <li>
                     <input type="checkbox" class="completed-status-checkbox" data-index="${task.index}">
-                    <input class="input-with-task"  disabled value="${task.description}" type="text" id="input-with-task" data-index="${task.index}"/>
+                    <input class="input-with-task ${task.completed ? 'line-through' : ''}"  disabled value="${task.description}" type="text" id="input-with-task" data-index="${task.index}"/>
                     <i class="fa-solid fa-ellipsis-vertical edit-task" data-index="${task.index}"></i>
                     <i class="fa-solid fa-trash-can" data-index="${task.index}"></i>
                 </li>  

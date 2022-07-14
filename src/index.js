@@ -67,6 +67,8 @@ todoListUl.addEventListener('click', (e) => {
       const objIndex = Number(element.dataset.index);
       
       CompletedStatus.updateCompletedStatus(objIndex)
+
+      element.nextElementSibling.classList.add('line-through')
     })
   }
 });

@@ -64,6 +64,7 @@ hr:last-child {
   text-align: center;
   padding: 10px 0;
   background-color: rgba(128, 128, 128, 0.2);
+  cursor: pointer;
 }
 
 .fa-trash-can {
@@ -76,4 +77,8 @@ hr:last-child {
 .edit-task {
   cursor: pointer;
   padding: 5px;
+}
+
+.line-through {
+  text-decoration: line-through;
 }

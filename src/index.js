@@ -2,10 +2,8 @@ import './style.css';
 import { Task } from '../modules/todos.js';
 import { UI } from '../modules/ui.js';
 import { CompletedStatus } from '../modules/completedStatus.js';
-// import { Store } from '../modules/store.js';
-// import { Store } from '../modules/store.js';
 
-const Store = require('../modules/store');
+const Store = require('../modules/store.js');
 
 // Selectors
 const addTaskForm = document.querySelector('#add-task-form');

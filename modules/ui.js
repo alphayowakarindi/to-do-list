@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 // import { Store } from './store.js';
-const Store = require('./store');
+const Store = require('./store.js');
 
 class UI {
   static displayTasksToUI() {

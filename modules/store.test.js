@@ -2,9 +2,8 @@
  * @jest-environment jsdom
  */
 
-const Store = require('./store');
-const UI = require('./ui');
-
+const Store = require('./store.js');
+const UI = require('./ui.js');
 
 describe('add or removing task', () => {
   test('adding task', () => {

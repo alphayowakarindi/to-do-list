@@ -13,4 +13,9 @@ describe("add or removing task", () => {
     };
     expect(Store.addTask(data)).toEqual(data);
   });
+
+  test("Remove list test", () => {
+    const todoTasks = JSON.parse(localStorage.getItem("todoTasks"));
+    expect(Store.remove(3)).toEqual(todoTasks[2]);
+  });
 });

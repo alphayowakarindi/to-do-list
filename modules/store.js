@@ -23,6 +23,9 @@ class Store {
       filtereTododTask.index = index + 1;
     });
     localStorage.setItem('todoTasks', JSON.stringify(filtereTododTasks));
+
+    return todoTasks[objIndex];
+
   }
 
   static update(objIndex, value) {

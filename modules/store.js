@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-export class Store {
+class Store {
   static getTasksList() {
     const todoTasks = JSON.parse(localStorage.getItem('todoTasks')) || [];
     return todoTasks;
@@ -9,6 +9,7 @@ export class Store {
     const todoTasks = Store.getTasksList();
     todoTasks.push(task);
     localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
+    return todoTasks[todoTasks.length-1]
   }
 
   static remove(objIndex) {
@@ -22,6 +23,7 @@ export class Store {
       filtereTododTask.index = index + 1;
     });
     localStorage.setItem('todoTasks', JSON.stringify(filtereTododTasks));
+    return
   }
 
   static update(objIndex, value) {
@@ -35,3 +37,6 @@ export class Store {
     localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
   }
 }
+
+module.exports = Store;
+

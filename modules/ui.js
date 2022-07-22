@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 // import { Store } from './store.js';
-const Store = require("./store");
+const Store = require('./store');
 
-export class UI {
+class UI {
   static displayTasksToUI() {
     const todoTasks = Store.getTasksList();
 
@@ -40,3 +40,5 @@ export class UI {
       <hr>`;
   }
 }
+
+module.exports = UI;

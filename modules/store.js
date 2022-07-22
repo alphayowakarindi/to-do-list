@@ -9,7 +9,7 @@ class Store {
     const todoTasks = Store.getTasksList();
     todoTasks.push(task);
     localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
-    return todoTasks[todoTasks.length-1]
+    return todoTasks[todoTasks.length - 1];
   }
 
   static remove(objIndex) {
@@ -25,7 +25,6 @@ class Store {
     localStorage.setItem('todoTasks', JSON.stringify(filtereTododTasks));
 
     return todoTasks[objIndex];
-
   }
 
   static update(objIndex, value) {
@@ -41,4 +40,3 @@ class Store {
 }
 
 module.exports = Store;
-

@@ -2,24 +2,26 @@
  * @jest-environment jsdom
  */
 
-const Store = require("./store");
+const Store = require('./store');
+const UI = require('./ui');
 
-describe("add or removing task", () => {
-  test("adding task", () => {
+
+describe('add or removing task', () => {
+  test('adding task', () => {
     const data = {
       index: 1,
       completed: false,
-      description: "wash dishes",
+      description: 'wash dishes',
     };
     expect(Store.addTask(data)).toEqual(data);
   });
 
-  test("Remove list test", () => {
-    const todoTasks = JSON.parse(localStorage.getItem("todoTasks"));
+  test('Remove list test', () => {
+    const todoTasks = JSON.parse(localStorage.getItem('todoTasks'));
     expect(Store.remove(3)).toEqual(todoTasks[2]);
   });
 
-  test("Remove one new item to the list", () => {
+  test('Remove one new item to the list', () => {
     document.body.innerHTML = `
     <section id="todo-list">
     <div class="title">
@@ -40,8 +42,7 @@ describe("add or removing task", () => {
     `;
 
     const todoListUl = document.querySelector('.todo-list');
-    UI.addTaskToList('heloo')
+    UI.addTaskToList('heloo');
     expect(todoListUl.childNodes.length).toBe(4);
   });
-
 });

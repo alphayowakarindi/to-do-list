@@ -1,12 +1,11 @@
 import './style.css';
 import { Task } from '../modules/todos.js';
-// import { Store } from '../modules/store.js';
-// import { Store } from '../modules/store.js';
-
-
-const Store = require("../modules/store");
 import { UI } from '../modules/ui.js';
 import { CompletedStatus } from '../modules/completedStatus.js';
+// import { Store } from '../modules/store.js';
+// import { Store } from '../modules/store.js';
+
+const Store = require('../modules/store');
 
 // Selectors
 const addTaskForm = document.querySelector('#add-task-form');
@@ -95,4 +94,3 @@ clearBtn.addEventListener('click', () => {
     completedElement.parentElement.remove();
   });
 });
-

@@ -1,6 +1,6 @@
 import './style.css';
 import { Task } from '../modules/todos.js';
-import { UI } from '../modules/ui.js';
+const UI = require('../modules/ui.js');
 import { CompletedStatus } from '../modules/completedStatus.js';
 
 const Store = require('../modules/store.js');

@@ -14,5 +14,3 @@ describe("add or removing task", () => {
     expect(Store.addTask(data)).toEqual(data);
   });
 });
-
- 

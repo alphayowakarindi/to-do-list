@@ -33,6 +33,7 @@ To get a local copy up and running follow these simple example steps.
 1. For HTML run ```npx hint .```
 2. For CSS run ```npx stylelint "**/*.{css,scss}"```
 3. For Javascript ```npx eslint .```
+4. For unit test with jest library ```npm test```
 
 
 ## Authors

@@ -37,6 +37,15 @@ class Store {
     // Save update array
     localStorage.setItem('todoTasks', JSON.stringify(todoTasks));
   }
+
+  static clearAllCompleted(inCompletedTodoTasks) {
+    // update indexes of the incompleted todos
+    inCompletedTodoTasks.forEach((inCompletedTodoTask, index) => {
+      inCompletedTodoTask.index = index + 1;
+    });
+    localStorage.setItem('todoTasks', JSON.stringify(inCompletedTodoTasks));
+    return inCompletedTodoTasks;
+  }
 }
 
 module.exports = Store;

@@ -78,13 +78,7 @@ clearBtn.addEventListener('click', () => {
     (todoTask) => !todoTask.completed,
   );
 
-  // update indexes of the incompleted todos
-  inCompletedTodoTasks.forEach((inCompletedTodoTask, index) => {
-    inCompletedTodoTask.index = index + 1;
-  });
-
-  // save incompleted todos
-  localStorage.setItem('todoTasks', JSON.stringify(inCompletedTodoTasks));
+  Store.clearAllCompleted(inCompletedTodoTasks);
 
   // remove completed todos from the dom
   const completedElements = document.querySelectorAll('.line-through');

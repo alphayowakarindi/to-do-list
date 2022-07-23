@@ -61,10 +61,8 @@ describe('add or removing task', () => {
         index: 2,
         completed: false,
         description: 'read one chapter of atomic habits',
-      }
+      },
     ];
-    expect(Store.clearAllCompleted(completedTask)).toEqual(completedTask)
+    expect(Store.clearAllCompleted(completedTask)).toEqual(completedTask);
   });
-
-
 });

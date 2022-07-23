@@ -49,4 +49,22 @@ describe('add or removing task', () => {
     const todoTasks = JSON.parse(localStorage.getItem('todoTasks'));
     expect(Store.remove(3, 'Read a novel')).toEqual(todoTasks[2], 'Read a novel');
   });
+
+  test('Clear completed test', () => {
+    const completedTask = [
+      {
+        index: 1,
+        completed: false,
+        description: 'wash dishes',
+      },
+      {
+        index: 2,
+        completed: false,
+        description: 'read one chapter of atomic habits',
+      }
+    ];
+    expect(Store.clearAllCompleted(completedTask)).toEqual(completedTask)
+  });
+
+
 });

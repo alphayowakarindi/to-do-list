@@ -44,4 +44,9 @@ describe('add or removing task', () => {
     UI.addTaskToList('heloo');
     expect(todoListUl.childNodes.length).toBe(4);
   });
+
+  test('Update list test', () => {
+    const todoTasks = JSON.parse(localStorage.getItem('todoTasks'));
+    expect(Store.remove(3, 'Read a novel')).toEqual(todoTasks[2], 'Read a novel');
+  });
 });
